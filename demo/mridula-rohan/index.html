@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flux Slate Secure Digital Lookbook - Mridula & Rohan - Taj Lands End, Mumbai">
+    <title>Mridula & Rohan — Taj Lands End Concept Lookbook</title>
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Inter (UI Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Access Gate Screen -->
+    <div class="access-gate" id="access-gate" aria-live="polite">
+        <div class="gate-content">
+            <span class="gate-badge">SECURE DIGITAL LOOKBOOK</span>
+            <h1 class="gate-title">FLUX SLATE</h1>
+            
+            <form id="gate-form" class="gate-form">
+                <div class="gate-input-group">
+                    <label for="gate-password" class="sr-only">Access Code</label>
+                    <input type="password" id="gate-password" placeholder="Enter Access Code" autocomplete="off" required>
+                    <span class="gate-focus-bar"></span>
+                </div>
+                <button type="submit" class="gate-submit-btn">Unlock Proposal</button>
+                <div class="gate-meta">
+                    <p class="gate-hint">Passcode: <span class="code-word">tajdecember</span></p>
+                    <p class="gate-error" id="gate-error" aria-live="assertive">Access code incorrect. Please try again.</p>
+                    <a href="../../landing/index.html" class="gate-back-link">← Back to Homepage</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Lookbook App -->
+    <div class="lookbook-app hide-initially" id="lookbook-app">
+        <!-- Magazine Header -->
+        <header class="lookbook-header">
+            <div class="brand-bar">
+                <span class="brand-name">
+                    <a href="../../landing/index.html" style="text-decoration: none; color: inherit;">
+                        FLUX <span class="font-light">SLATE</span>
+                    </a>
+                </span>
+                <span class="secure-badge"><span class="badge-dot"></span> SECURE CLIENT LINK</span>
+            </div>
+            <div class="client-identity">
+                <h1 class="client-names">Mridula & Rohan</h1>
+                <p class="venue-subtitle">Venue Concept: Taj Lands End, Mumbai</p>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="lookbook-content">
+            
+            <!-- Showcase Card 1: Canopy & Floral Ceiling -->
+            <section class="showcase-card" data-card-id="canopy-floral-ceiling">
+                <div class="card-visual-wrapper">
+                    <div class="card-visual gradient-emerald">
+                        <!-- Custom CSS Grid Lines & Velvet Texture overlay -->
+                        <div class="visual-grid-lines"></div>
+                        <div class="concept-label">MANDAP CONCEPT</div>
+                        
+                        <!-- Floating Actions Bottom Right -->
+                        <div class="floating-actions">
+                            <button class="action-btn heart-btn" aria-label="Approve Concept">
+                                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="action-btn comment-btn" aria-label="Add Feedback">
+                                <svg class="comment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Approved overlay -->
+                        <div class="approved-overlay">
+                            <div class="approved-badge-wrapper">
+                                <svg class="approved-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                <span>Concept Approved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-details">
+                    <h2 class="card-title">01 / The Canopy & Floral Ceiling</h2>
+                    <p class="card-description">
+                        Exotic white hydrangeas and tuberose suspended in cascading drapes, dropped elegantly to balance structural brass elements.
+                    </p>
+                </div>
+
+                <!-- Inline Feedback Tray (Initially collapsed) -->
+                <div class="feedback-tray">
+                    <div class="feedback-tray-inner">
+                        <textarea class="feedback-textarea" placeholder="Add design feedback for this concept..." rows="2"></textarea>
+                        <div class="feedback-actions">
+                            <button class="btn-cancel-feedback">Cancel</button>
+                            <button class="btn-send-feedback">Send Feedback</button>
+                        </div>
+                    </div>
+                    <div class="feedback-success-msg">
+                        <span class="success-dot"></span> Feedback transmitted to design studio.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Showcase Card 2: Heritage Tablescape -->
+            <section class="showcase-card" data-card-id="heritage-tablescape">
+                <div class="card-visual-wrapper">
+                    <div class="card-visual gradient-gold-cream">
+                        <div class="visual-grid-lines"></div>
+                        <div class="concept-label">TABLESCAPE DETAIL</div>
+                        
+                        <!-- Floating Actions Bottom Right -->
+                        <div class="floating-actions">
+                            <button class="action-btn heart-btn" aria-label="Approve Concept">
+                                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="action-btn comment-btn" aria-label="Add Feedback">
+                                <svg class="comment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Approved overlay -->
+                        <div class="approved-overlay">
+                            <div class="approved-badge-wrapper">
+                                <svg class="approved-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                <span>Concept Approved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-details">
+                    <h2 class="card-title">02 / Heritage Tablescape</h2>
+                    <p class="card-description">
+                        Antique brass candelabras set against raw silk linen runners, adorned with loose marigolds and hand-dipped beeswax candles.
+                    </p>
+                </div>
+
+                <!-- Inline Feedback Tray -->
+                <div class="feedback-tray">
+                    <div class="feedback-tray-inner">
+                        <textarea class="feedback-textarea" placeholder="Add design feedback for this concept..." rows="2"></textarea>
+                        <div class="feedback-actions">
+                            <button class="btn-cancel-feedback">Cancel</button>
+                            <button class="btn-send-feedback">Send Feedback</button>
+                        </div>
+                    </div>
+                    <div class="feedback-success-msg">
+                        <span class="success-dot"></span> Feedback transmitted to design studio.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Showcase Card 3: Welcome Walkway -->
+            <section class="showcase-card" data-card-id="welcome-walkway">
+                <div class="card-visual-wrapper">
+                    <div class="card-visual gradient-marigold">
+                        <div class="visual-grid-lines"></div>
+                        <div class="concept-label">ENTRANCE EXPERIENTIAL</div>
+                        
+                        <!-- Floating Actions Bottom Right -->
+                        <div class="floating-actions">
+                            <button class="action-btn heart-btn" aria-label="Approve Concept">
+                                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="action-btn comment-btn" aria-label="Add Feedback">
+                                <svg class="comment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Approved overlay -->
+                        <div class="approved-overlay">
+                            <div class="approved-badge-wrapper">
+                                <svg class="approved-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                <span>Concept Approved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-details">
+                    <h2 class="card-title">03 / The Welcome Walkway</h2>
+                    <p class="card-description">
+                        Arches of fresh jasmine strings interspersed with hanging brass bells, casting warm amber shadows across the stone pathway.
+                    </p>
+                </div>
+
+                <!-- Inline Feedback Tray -->
+                <div class="feedback-tray">
+                    <div class="feedback-tray-inner">
+                        <textarea class="feedback-textarea" placeholder="Add design feedback for this concept..." rows="2"></textarea>
+                        <div class="feedback-actions">
+                            <button class="btn-cancel-feedback">Cancel</button>
+                            <button class="btn-send-feedback">Send Feedback</button>
+                        </div>
+                    </div>
+                    <div class="feedback-success-msg">
+                        <span class="success-dot"></span> Feedback transmitted to design studio.
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="lookbook-footer-bar">
+            <div class="footer-container">
+                <p class="footer-brand">FLUX SLATE • DIGITAL PITCH</p>
+                <p class="footer-tagline">Confidential Client Review System. Powered by Flux.</p>
+                <a href="../../landing/index.html" class="footer-back-link">← Return to Homepage</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script Injection -->
+    <script src="script.js"></script>
+</body>
+</html>

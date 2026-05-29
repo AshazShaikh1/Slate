@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flux Slate transforms wedding decor inspiration into stunning digital lookbooks for luxury Indian wedding styling firms."
+    />
+    <title>
+      Flux Slate — Premium Curation & Digital Lookbooks for Wedding Stylists
+    </title>
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Inter (Clean Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Supabase Client Ingestion -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <!-- Elite Editorial Header -->
+    <header class="main-header" id="navbar">
+      <div class="header-container">
+        <div class="logo">
+          <span class="logo-main">FLUX</span>
+          <span class="logo-sub">SLATE</span>
+        </div>
+        <div class="header-badge">
+          <span class="badge-dot"></span> PHASE 1 BETA
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Editorial Section -->
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="container hero-container">
+          <h1 class="hero-title">
+            Stop flooding your premium clients with
+            <span class="italic-serif">200 loose WhatsApp images</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Flux Slate transforms your curated wedding decor inspiration into a
+            stunning, interactive digital lookbook. Send a single,
+            password-protected link over WhatsApp that looks like a high-end
+            design magazine.
+          </p>
+          <div class="hero-actions">
+            <button class="cta-button" id="trigger-modal-btn">
+              Request Beta Access
+            </button>
+            <span class="pricing-tag"
+              >Limited to 15 Indian Styling Firms • ₹199/mo lifetime</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Premium Live Lookbook Simulator Section -->
+      <section class="lookbook-section" id="lookbook-demo">
+        <div class="container">
+          <div class="section-tag">SIMULATED LOOKBOOK</div>
+          <h2 class="section-title-small">The Client Experience</h2>
+
+          <!-- Phone Mockup Container (Pure CSS Lookbook) -->
+          <div class="phone-wrapper">
+            <div class="phone-frame">
+              <div class="phone-screen" style="position: relative">
+                <!-- Simulator Lookbook App (Active by Default) -->
+                <div class="sim-lookbook-app is-active" id="sim-lookbook-app">
+                  <div class="sim-lookbook-header">
+                    <div class="sim-brand-bar">
+                      <span class="sim-brand-name">FLUX SLATE</span>
+                      <span class="sim-secure-badge">🔒 SECURE LINK</span>
+                    </div>
+                    <div class="sim-client-identity">
+                      <h4 class="sim-client-names">Mridula & Rohan</h4>
+                      <p class="sim-venue-subtitle">Taj Lands End, Mumbai</p>
+                    </div>
+                  </div>
+
+                  <div class="sim-lookbook-content">
+                    <!-- Concept 1: Canopy & Floral Ceiling -->
+                    <div
+                      class="sim-showcase-card"
+                      data-sim-card-id="sim-canopy"
+                    >
+                      <div class="sim-card-visual gradient-emerald">
+                        <div class="sim-visual-grid-lines"></div>
+                        <div class="sim-concept-label">MANDAP CONCEPT</div>
+
+                        <!-- Floating Actions -->
+                        <div class="sim-floating-actions">
+                          <button
+                            type="button"
+                            class="sim-action-btn sim-heart-btn"
+                            aria-label="Approve"
+                          >
+                            <svg
+                              class="heart-icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                            >
+                              <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            class="sim-action-btn sim-comment-btn"
+                            aria-label="Comment"
+                          >
+                            <svg
+                              class="comment-icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                            >
+                              <path
+                                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="sim-approved-overlay">
+                          <div class="sim-approved-badge-wrapper">
+                            <svg
+                              class="approved-check"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Concept Approved</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sim-card-details">
+                        <h5 class="sim-card-title">
+                          01 / The Canopy & Floral Ceiling
+                        </h5>
+                        <p class="sim-card-description">
+                          Exotic white hydrangeas and tuberose suspended in
+                          cascading strings, draped elegantly in premium
+                          semi-sheer georgette.
+                        </p>
+                      </div>
+                      <!-- Feedback Tray -->
+                      <div class="sim-feedback-tray">
+                        <div class="sim-feedback-tray-inner">
+                          <textarea
+                            class="sim-feedback-textarea"
+                            placeholder="Add design feedback..."
+                            rows="1"
+                          ></textarea>
+                          <div class="sim-feedback-actions">
+                            <button type="button" class="sim-btn-cancel">
+                              Cancel
+                            </button>
+                            <button type="button" class="sim-btn-send">
+                              Send
+                            </button>
+                          </div>
+                        </div>
+                        <div class="sim-feedback-success-msg">
+                          Feedback transmitted to studio.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Concept 2: Heritage Tablescape -->
+                    <div
+                      class="sim-showcase-card"
+                      data-sim-card-id="sim-tablescape"
+                    >
+                      <div class="sim-card-visual gradient-gold-cream">
+                        <div class="sim-visual-grid-lines"></div>
+                        <div class="sim-concept-label">TABLESCAPE DETAIL</div>
+
+                        <!-- Floating Actions -->
+                        <div class="sim-floating-actions">
+                          <button
+                            type="button"
+                            class="sim-action-btn sim-heart-btn"
+                            aria-label="Approve"
+                          >
+                            <svg
+                              class="heart-icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                            >
+                              <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            class="sim-action-btn sim-comment-btn"
+                            aria-label="Comment"
+                          >
+                            <svg
+                              class="comment-icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                            >
+                              <path
+                                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="sim-approved-overlay">
+                          <div class="sim-approved-badge-wrapper">
+                            <svg
+                              class="approved-check"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Concept Approved</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sim-card-details">
+                        <h5 class="sim-card-title">02 / Heritage Tablescape</h5>
+                        <p class="sim-card-description">
+                          Handcrafted brass urli bowls filled with vibrant
+                          marigolds, block-printed linen, and vintage candles.
+                        </p>
+                      </div>
+                      <!-- Feedback Tray -->
+                      <div class="sim-feedback-tray">
+                        <div class="sim-feedback-tray-inner">
+                          <textarea
+                            class="sim-feedback-textarea"
+                            placeholder="Add design feedback..."
+                            rows="1"
+                          ></textarea>
+                          <div class="sim-feedback-actions">
+                            <button type="button" class="sim-btn-cancel">
+                              Cancel
+                            </button>
+                            <button type="button" class="sim-btn-send">
+                              Send
+                            </button>
+                          </div>
+                        </div>
+                        <div class="sim-feedback-success-msg">
+                          Feedback transmitted to studio.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Concept 3: Welcome Walkway -->
+                    <div
+                      class="sim-showcase-card"
+                      data-sim-card-id="sim-welcome"
+                    >
+                      <div class="sim-card-visual gradient-marigold">
+                        <div class="sim-visual-grid-lines"></div>
+                        <div class="sim-concept-label">
+                          ENTRANCE EXPERIENTIAL
+                        </div>
+
+                        <!-- Floating Actions -->
+                        <div class="sim-floating-actions">
+                          <button
+                            type="button"
+                            class="sim-action-btn sim-heart-btn"
+                            aria-label="Approve"
+                          >
+                            <svg
+                              class="heart-icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                            >
+                              <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            class="sim-action-btn sim-comment-btn"
+                            aria-label="Comment"
+                          >
+                            <svg
+                              class="comment-icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                            >
+                              <path
+                                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="sim-approved-overlay">
+                          <div class="sim-approved-badge-wrapper">
+                            <svg
+                              class="approved-check"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Concept Approved</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sim-card-details">
+                        <h5 class="sim-card-title">03 / The Welcome Walkway</h5>
+                        <p class="sim-card-description">
+                          Arches of fresh jasmine strings interspersed with
+                          hanging brass bells, casting warm amber shadows across
+                          the stone pathway.
+                        </p>
+                      </div>
+                      <!-- Feedback Tray -->
+                      <div class="sim-feedback-tray">
+                        <div class="sim-feedback-tray-inner">
+                          <textarea
+                            class="sim-feedback-textarea"
+                            placeholder="Add design feedback..."
+                            rows="1"
+                          ></textarea>
+                          <div class="sim-feedback-actions">
+                            <button type="button" class="sim-btn-cancel">
+                              Cancel
+                            </button>
+                            <button type="button" class="sim-btn-send">
+                              Send
+                            </button>
+                          </div>
+                        </div>
+                        <div class="sim-feedback-success-msg">
+                          Feedback transmitted to studio.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Swatches -->
+                    <div class="sim-lookbook-palette">
+                      <h6 class="sim-palette-title">Curated Color Palette</h6>
+                      <div class="sim-palette-colors">
+                        <div
+                          class="sim-palette-color"
+                          style="background-color: #0a5c36"
+                        >
+                          <span>Emerald</span>
+                        </div>
+                        <div
+                          class="sim-palette-color"
+                          style="background-color: #fffdd0; color: #121212"
+                        >
+                          <span>Ivory</span>
+                        </div>
+                        <div
+                          class="sim-palette-color"
+                          style="background-color: #d4af37"
+                        >
+                          <span>Gold</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sim-lookbook-footer">
+                    <span>🔒 Secure Link</span>
+                    <span>Flux Slate Presentation System</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Demo Link CTA -->
+          <div
+            class="demo-interactive-cta"
+            style="margin-top: 3rem; text-align: center"
+          >
+            <a
+              href="../demo/mridula-rohan/index.html"
+              class="cta-button"
+              target="_blank"
+              style="text-decoration: none; display: inline-block"
+            >
+              Open Interactive Client Demo
+            </a>
+            <span class="pricing-tag" style="display: block; margin-top: 0.8rem"
+              >Experience the password protection & feedback features live</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Pillars Section -->
+      <section class="benefits-section" id="benefits">
+        <div class="container">
+          <div class="section-tag">THE PLATFORM</div>
+          <h2 class="benefits-heading">Designed for Elite Design Studios</h2>
+
+          <div class="grid-benefits">
+            <div class="benefit-card">
+              <div class="benefit-num">01</div>
+              <h3 class="benefit-title">Fast Mobile Upload</h3>
+              <p class="benefit-description">
+                Capture inspiration on the go. Snap venue photos at the Taj or
+                clip new trends directly on your phone. Your mood boards stay
+                organized, private, and lightning-fast.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-num">02</div>
+              <h3 class="benefit-title">One-Click Lookbooks</h3>
+              <p class="benefit-description">
+                Instant editorial presentation. Transform your loose floral
+                concepts, fabrics, and layout grids into a styled digital
+                magazine link. No more messy PDFs.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-num">03</div>
+              <h3 class="benefit-title">Client Feedback Portal</h3>
+              <p class="benefit-description">
+                Seamless client sign-off. Your couples open a single link inside
+                WhatsApp, tap to approve layouts, or drop specific feedback
+                right on the image.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing CTA section to drive high conversion -->
+      <section class="cta-bottom-section">
+        <div class="container text-center">
+          <h2 class="cta-bottom-heading">
+            Ready to elevate your presentation standards?
+          </h2>
+          <p class="cta-bottom-sub">
+            Be one of the 15 exclusive Indian design firms to shape the future
+            of wedding curation.
+          </p>
+          <button class="cta-button primary-cta" id="bottom-cta-btn">
+            Reserve Beta Access
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container footer-container">
+        <p class="footer-copy">
+          &copy; 2026 Flux Slate. All rights reserved. Created for elite styling
+          firms.
+        </p>
+        <p class="footer-note">Part of the Flux design ecosystem.</p>
+      </div>
+    </footer>
+
+    <!-- Lead Capture Modal (Premium Glassmorphism Overlay) -->
+    <div class="modal-overlay" id="lead-modal" aria-hidden="true" role="dialog">
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          id="close-modal-btn"
+          aria-label="Close modal"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div class="modal-body">
+          <h2 class="modal-title" style="margin-bottom: 1.5rem">
+            Select Access Tier
+          </h2>
+
+          <!-- Two-Tier Side-by-Side Selection Grid -->
+          <div class="tier-selection-container">
+            <!-- Option 1: Standard Waitlist -->
+            <div
+              class="tier-card"
+              id="tier-free"
+              data-tier="free_waitlist"
+              role="radio"
+              aria-checked="false"
+              tabindex="0"
+            >
+              <div class="tier-badge">Free to Join</div>
+              <h3 class="tier-title">Standard Waitlist</h3>
+              <p class="tier-subtext">₹399/month upon launch</p>
+              <div class="tier-incentive">
+                Free Waitlist Entry + Your 1st Month is
+                <strong>100% FREE</strong> upon public launch.
+              </div>
+            </div>
+
+            <!-- Option 2: Founding Creator Pass (Recommended & Default) -->
+            <div
+              class="tier-card active"
+              id="tier-founding"
+              data-tier="founding_pass"
+              role="radio"
+              aria-checked="true"
+              tabindex="0"
+            >
+              <div class="tier-badge recommended">
+                Founding Creator Pass (Recommended)
+              </div>
+              <h3 class="tier-title">Founding Creator Pass</h3>
+              <p class="tier-subtext">₹299 one-time setup activation</p>
+              <div class="tier-incentive">
+                Get <strong>3 Months Entirely FREE</strong> + Locked 50% Off
+                Lifetime Pricing (Just ₹199/month forever).
+              </div>
+            </div>
+          </div>
+
+          <!-- Lead Capture Form -->
+          <form
+            id="beta-access-form"
+            class="beta-form"
+            action="https://formspree.io/f/placeholder"
+            method="POST"
+            novalidate
+          >
+            <!-- Track Selected Access Tier -->
+            <input
+              type="hidden"
+              id="tier-selected-input"
+              name="tier_selected"
+              value="founding_pass"
+            />
+
+            <div class="form-group">
+              <label for="full-name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="full-name"
+                name="fullname"
+                class="form-input"
+                placeholder="e.g. Devika Narain"
+                required
+              />
+              <span class="error-msg" id="name-error"
+                >Please enter your full name.</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="insta-handle" class="form-label"
+                >Instagram Handle</label
+              >
+              <div class="input-prefix-wrapper">
+                <span class="input-prefix">@</span>
+                <input
+                  type="text"
+                  id="insta-handle"
+                  name="instagram"
+                  class="form-input has-prefix"
+                  placeholder="devikanarainandcompany"
+                  required
+                />
+              </div>
+              <span class="error-msg" id="insta-error"
+                >Please enter a valid Instagram handle.</span
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="business-email" class="form-label"
+                >Business Email</label
+              >
+              <input
+                type="email"
+                id="business-email"
+                name="email"
+                class="form-input"
+                placeholder="design@devikanarain.com"
+                required
+              />
+              <span class="error-msg" id="email-error"
+                >Please enter a valid business email.</span
+              >
+            </div>
+
+            <button type="submit" class="form-submit-btn" id="submit-btn">
+              Secure Founding Pass & Pay ₹299
+            </button>
+          </form>
+
+          <!-- Success State Overlay (Hidden by Default) -->
+          <div class="success-state" id="form-success-state">
+            <div class="success-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#10B981"
+                stroke-width="2.5"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+
+            <!-- 1. Waitlist (Free) Success View -->
+            <div id="success-free-content" class="success-tier-view">
+              <h3 class="success-title">Added to Waitlist</h3>
+              <p class="success-description">
+                Your 100% Free First Month slot has been reserved successfully.
+                We will notify your studio via email as soon as public
+                onboarding begins.
+              </p>
+            </div>
+
+            <!-- 2. Founding Pass Success View -->
+            <div id="success-founding-content" class="success-tier-view">
+              <h3 class="success-title">Application Logged Successfully</h3>
+              <p class="success-description">
+                To prevent automated signups and officially lock in your
+                studio's Founding Creator slot (3 Months Free + Lifetime Pricing
+                locked at ₹199/month), please complete your ₹299 activation
+                deposit. Scan the official secure UPI QR code below using GPay,
+                PhonePe, or Paytm to complete your ₹299 verification deposit.
+              </p>
+
+              <!-- Glassmorphic QR Code Container -->
+              <div class="qr-container">
+                <img
+                  src="assets/upi-qr.png"
+                  alt="Secure UPI QR Code"
+                  class="qr-image"
+                />
+              </div>
+
+              <!-- UPI ID Display with Copy Button -->
+              <div class="upi-id-display">
+                <span class="upi-label">UPI ID:</span>
+                <span class="upi-value" id="upi-raw-val"
+                  >ashazshaikh111-1@okicici</span
+                >
+                <button
+                  class="upi-copy-btn"
+                  id="upi-copy-trigger"
+                  aria-label="Copy UPI ID"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="success-footer-subtext">
+                Reference Transaction ID:
+                <strong id="txn-ref-id" class="emerald-text">FX-XXXXX</strong>
+              </p>
+            </div>
+
+            <button
+              class="cta-button"
+              id="success-close-btn"
+              style="margin-top: 1rem"
+            >
+              Return to Lookbook
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script Injection -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
