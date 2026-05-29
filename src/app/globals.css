@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0a0a0a;
+  --color-charcoal: #121212;
+  --color-card: #181818;
+  
+  --color-emerald-primary: #0f5257;
+  --color-emerald-light: #18838b;
+  --color-emerald-bright: #10b981;
+  --color-emerald-dark: #07282b;
+  --color-emerald-glow: rgba(16, 185, 129, 0.15);
+
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  
+  --animate-scale-pop: scalePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scalePop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* Global utility classes for LookBook custom visuals */
+.gradient-emerald {
+  background: linear-gradient(135deg, #041612 0%, #0A3228 50%, #0D493A 100%);
+}
+
+.gradient-gold-cream {
+  background: linear-gradient(135deg, #FDFBF7 0%, #EFE9DB 50%, #DDD3BE 100%);
+}
+
+.gradient-marigold {
+  background: linear-gradient(135deg, #CF6900 0%, #EE8D02 50%, #FCAE2A 100%);
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f5257;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Scroll-Linked In-Out Animations for Sections */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
